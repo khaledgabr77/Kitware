@@ -116,7 +116,7 @@ make test
 # for the EXPORT_BUILD_DIR option for more information.
 sudo make install
 ```
-### PCL
+## PCL
   - ### Dependencies
 ```bash
 #Boost
@@ -135,7 +135,7 @@ make -j4
 sudo make -j4 install
 ```
 
-### Nanoflann
+## Nanoflann
   - ### Dependencies
 ```bash
 sudo apt-get install build-essential cmake libgtest-dev libeigen3-dev
@@ -149,7 +149,7 @@ cmake ..
 make
 sudo make install
 ```
-### VTK
+## VTK
   - ### Dependencies
 ```bash
 sudo apt install cmake libavcodec-dev libavformat-dev libavutil-dev libboost-dev libdouble-conversion-dev libeigen3-dev libexpat1-dev libfontconfig-dev libfreetype6-dev libgdal-dev libglew-dev libhdf5-dev libjpeg-dev libjsoncpp-dev liblz4-dev liblzma-dev libnetcdf-dev libnetcdf-cxx-legacy-dev libogg-dev libpng-dev libpython3-dev libqt5opengl5-dev libqt5x11extras5-dev libsqlite3-dev libswscale-dev libtheora-dev libtiff-dev libxml2-dev libxt-dev qtbase5-dev qttools5-dev zlib1g-dev
@@ -183,7 +183,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$HOME/vtk-inst \
 make -j$(($(nproc) - 1))
 sudo make install
 ```
-### g2o
+## g2o
   - ### Dependencies
 ```bash
 sudo apt install libeigen3-dev
