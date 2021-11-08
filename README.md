@@ -1,6 +1,3 @@
-![SLAM in LidarView](doc/paraview_plugin.png)
-
-![SLAM in ROS](doc/ros_node.png)
 
 # LiDAR SLAM
 
