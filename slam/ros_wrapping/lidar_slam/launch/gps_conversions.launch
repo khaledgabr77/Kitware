@@ -1,0 +1,26 @@
+<launch>
+
+  <!-- from sensor_msgs/NavSatFix to gps_common/GPSFix -->
+  <node name="navsatfix_to_gpsfix" pkg="gps_conversions" type="navsatfix_to_gpsfix" output="screen">
+    <remap from="nav_sat_fix" to="fix"/>
+  </node>
+
+  <!-- GPS projection : Lat/Lon to UTM X/Y, from gps_common/GPSFix to nav_msgs/Odometry -->
+  <node name="gps_to_utm" pkg="gps_conversions" type="gps_to_utm" output="screen">
+    <param name="utm_frame_id"       value="utm"/>
+    <param name="local_enu_frame_id" value="enu"/>
+    <param name="local_map_frame_id" value="map"/>
+    <param name="child_frame_id"     value="gps"/>
+    <param name="publish_local_map_tf" value="true"/>
+    <param name="origin_on_first_pose" value="true"/>
+    <param name="time_offset" value="0."/>
+  </node>
+
+  <!-- SLAM to WGS84 conversion : UTM X/Y to GPS Lat/Lon, from nav_msgs/Odometry to gps_common/GPSFix -->
+  <node name="slam_to_gps" pkg="gps_conversions" type="odom_to_gps" output="screen">
+    <param name="utm_frame_id" value="utm"/>
+    <remap from="odom" to="slam_odom"/>
+    <remap from="fix" to="slam_fix"/>
+  </node>
+
+</launch>
