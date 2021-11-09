@@ -4,7 +4,7 @@
   <!-- General args -->
   <arg name="use_sim_time" default="true" doc="Use simulation time when replaying rosbags with '--clock' option."/>
   <arg name="rviz" default="true" doc="Visualize results with RViz."/>
-  <arg name="gps" default="false" doc="If true, use GPS data to calibrate SLAM output. Otherwise, provide calibration."/>
+  <arg name="gps" default="true" doc="If true, use GPS data to calibrate SLAM output. Otherwise, provide calibration."/>
 
   <!-- LiDAR pointclouds conversions args. These are only used to generate
        approximate point-wise timestamps if 'time' field is not usable).
