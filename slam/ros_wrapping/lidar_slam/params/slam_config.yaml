@@ -66,7 +66,7 @@ gps:
   # Optional GPS positions use to calibrate output SLAM pose to world coordinates and/or optimize SLAM trajectory.
   # If true, subscribes to topic 'gps_odom' (nav_msgs/Odometry), and logs GPS positions during 'slam/logging_timeout' seconds.
   # (WARNING Can be overridden in slam.launch with 'gps' arg).
-  use_gps: false
+  use_gps: true
 
   # Approximate GPS/SLAM calibration (available if use_gps=true)
   # Fit GPS trajectory to SLAM trajectory with ICP to estimate the rigid transform that links 'gps_odom/header/frame_id'
@@ -74,7 +74,7 @@ gps:
   # GPS/SLAM calibration can be triggered by sending SlamCommand::GPS_SLAM_CALIBRATION to 'slam_command' topic.
   calibration:
     no_roll: false            # If true, impose calibration to have no roll rotation. DEBUG
-    publish_icp_paths: false  # If true, publish ICP-aligned GPS and SLAM trajectories to 'icp_gps_path' and 'icp_slam_path' latched topics (default: false).
+    publish_icp_paths: true  # If true, publish ICP-aligned GPS and SLAM trajectories to 'icp_gps_path' and 'icp_slam_path' latched topics (default: false).
 
   # Pose Graph Optimization (PGO) (available if use_gps=true)
   # Use GPS positions and covariances to optimize SLAM trajectory and maps by correcting drift,
